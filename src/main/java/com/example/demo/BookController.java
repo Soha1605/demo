@@ -75,6 +75,13 @@ public class BookController {
         return "redirect:/books";
     }
 
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.DELETE)//TODO, elimina un attore dal db
+    public boolean remove(@PathVariable("movie") Long id) {
+
+        bookService.deleteBook(id);
+        return true;
+    }
+
 
 
 }
